@@ -16,7 +16,7 @@ function search() {
             if (d == []) {
                 let emptyMsg = document.createElement('span')
                 emptyMsg.innerText = "Sorry, no matching results found."
-                resultContainer.append(emptyMsg)
+                resultContainer.appendChild(emptyMsg)
             }
             for (let resultItem of d) {
                 let div = document.createElement('div')
