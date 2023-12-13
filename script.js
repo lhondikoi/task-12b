@@ -13,32 +13,33 @@ function search() {
         }))
         .then(r => r.json())
         .then(d => {
-            if (d == []) {
+            if (d.length == 0) {
                 let emptyMsg = document.createElement('span')
                 emptyMsg.innerText = "Sorry, no matching results found."
                 resultContainer.appendChild(emptyMsg)
-            }
-            for (let resultItem of d) {
-                let div = document.createElement('div')
-                div.classList.add('result-item')
-
-                let title = document.createElement('h3')
-                title.classList.add('title')
-
-                let link = document.createElement('a')
-                link.setAttribute('href', resultItem.web_pages[0])
-                link.setAttribute('target', '_blank')
-
-                link.innerText = resultItem.name
-
-                title.appendChild(link)
-
-                let location = document.createElement('span')
-                location.innerHTML = `<i class="bi bi-geo-alt"></i> ${resultItem.country}`
-
-                div.appendChild(title)
-                div.appendChild(location)
-                resultContainer.appendChild(div)
+            } else {
+                for (let resultItem of d) {
+                    let div = document.createElement('div')
+                    div.classList.add('result-item')
+    
+                    let title = document.createElement('h3')
+                    title.classList.add('title')
+    
+                    let link = document.createElement('a')
+                    link.setAttribute('href', resultItem.web_pages[0])
+                    link.setAttribute('target', '_blank')
+    
+                    link.innerText = resultItem.name
+    
+                    title.appendChild(link)
+    
+                    let location = document.createElement('span')
+                    location.innerHTML = `<i class="bi bi-geo-alt"></i> ${resultItem.country}`
+    
+                    div.appendChild(title)
+                    div.appendChild(location)
+                    resultContainer.appendChild(div)
+                }
             }
         })
     }
