@@ -8,7 +8,7 @@ function search() {
     let searchQuery = query.value
     query.value = ""
     if (searchQuery !== "") {
-        fetch('http://universities.hipolabs.com/search?' + new URLSearchParams({
+        fetch('https://university-domains.onrender.com/search?' + new URLSearchParams({
             name: searchQuery
         }))
         .then(r => r.json())
