@@ -13,6 +13,11 @@ function search() {
         }))
         .then(r => r.json())
         .then(d => {
+            if (d == []) {
+                let emptyMsg = document.createElement('span')
+                emptyMsg.innerText = "Sorry, no matching results found."
+                resultContainer.append(emptyMsg)
+            }
             for (let resultItem of d) {
                 let div = document.createElement('div')
                 div.classList.add('result-item')
