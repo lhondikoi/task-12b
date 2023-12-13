@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <header>
+                <h1 id="app-title">University Search</h1>
+                <p id="app-desc">Search for universities around the world.</p>
+                <div class="searchbar">
+                    <input type="text" name="query" id="query">
+                    <button onclick="search()" class="btn" id="search-btn"><i class="bi bi-search"></i></button>
+                </div>
+            </header>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
